@@ -29,7 +29,7 @@ object Res {
         const val ROLE_AND_RESPONSIBILITIES = "Role and Responsibilities"
         const val GITHUB_URL = "https://github.com/AzeemMobileDev"
         const val LINKEDIN_URL = "https://www.linkedin.com/in/mohamed-azeem-m/"
-        const val RESUME = "https://drive.google.com/drive/folders/1OIPb0odi4aAs44EzP-DvqUL1Zr2AZdVt?usp=sharing"
+        const val RESUME = "https://drive.google.com/file/d/1a55FTPQEH30ckbAKJNEXYWhXsvZLeL6Z/view?usp=sharing"
         const val VERSION = "Version: 1.0.0"
         const val MADE_WITH = "Made with"
     }

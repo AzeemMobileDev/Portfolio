@@ -104,7 +104,7 @@ fun HomeSection(
                     )
                 }
 
-                /*Box(
+                Box(
                     modifier = ResumeButtonStyle.toModifier()
                         .margin(left = 5.px)
                         .onClick { ctx.router.navigateTo(Res.String.RESUME) }
@@ -142,7 +142,7 @@ fun HomeSection(
                                 )
                         )
                     }
-                }*/
+                }
             }
         }
     }
