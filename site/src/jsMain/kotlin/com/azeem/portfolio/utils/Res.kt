@@ -32,12 +32,15 @@ object Res {
         const val RESUME = "https://drive.google.com/file/d/1a55FTPQEH30ckbAKJNEXYWhXsvZLeL6Z/view?usp=sharing"
         const val VERSION = "Version: 1.0.0"
         const val MADE_WITH = "Made with"
+        const val REVEAL_PROFILE_IMAGE = "Tap or hover to reveal my profile image"
     }
 
     object Drawable {
         // Profile image
         const val IMAGE_1 = "/image1.png"
         const val IMAGE_2 = "/image2.png"
+        const val IMAGE_ART = "/image-art.webp"
+        const val PROFILE_IMAGE_ART = "/profile-pic-art.png"
 
         // Skills and Tools
         const val ANDROID = "/images/android.svg"

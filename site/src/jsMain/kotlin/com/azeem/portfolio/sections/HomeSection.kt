@@ -3,14 +3,15 @@ package com.azeem.portfolio.sections
 import androidx.compose.runtime.Composable
 import com.azeem.portfolio.utils.*
 import com.varabyte.kobweb.compose.css.FontWeight
-import com.varabyte.kobweb.compose.css.ObjectFit
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.PageContext
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.icons.fa.*
@@ -24,6 +25,7 @@ import com.varabyte.kobweb.silk.theme.shapes.clip
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.Div
 
 @Composable
 fun HomeSection(
@@ -43,17 +45,33 @@ fun HomeSection(
         ) {
 
             Box(
-                modifier = ProfileImageStyle.toModifier().background(
-                    Res.Colors.PROFILE_BG
-                )
+                modifier = ProfileImageStyle.toModifier()
             ) {
                 Image(
                     Res.Drawable.IMAGE_1, alt = "Profile image",
-                    modifier = ProfileImageStyle.toModifier().clip(shape = Circle())
+                    modifier = ProfileImageStyle.toModifier().background(
+                        Res.Colors.PROFILE_BG
+                    ).clip(shape = Circle())
+                )
+                Div(
+                    ProfileImageStyle.toModifier().clip(shape = Circle()).fillMaxSize().background(Colors.Transparent)
+                        .toAttrs()
+                )
+                Image(
+                    Res.Drawable.PROFILE_IMAGE_ART, alt = "Profile image art",
+                    modifier = HoverProfileImageArtStyle.toModifier().background(
+                        Res.Colors.PROFILE_BG
+                    ).clip(shape = Circle())
                 )
             }
+            SpanText(
+                text = Res.String.REVEAL_PROFILE_IMAGE,
+                modifier = AboutSectionDesignationStyle.toModifier().margin(topBottom = 12.px)
+                    .fontFamily(Res.Font.LATO_REGULAR)
+                    .color(Res.Colors.DARK_BLUE)
+            )
 
-            Surface(modifier = Modifier.height(60.px)) {}
+            Surface(modifier = Modifier.height(40.px)) {}
 
             SpanText(
                 text = Res.String.INTRO,

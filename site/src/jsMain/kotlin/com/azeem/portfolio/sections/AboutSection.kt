@@ -5,14 +5,17 @@ import com.azeem.portfolio.utils.*
 import com.azeem.portfolio.widgets.SectionTitle
 import com.varabyte.kobweb.browser.util.kebabCaseToTitleCamelCase
 import com.varabyte.kobweb.compose.css.FontWeight
+import com.varabyte.kobweb.compose.css.ObjectFit
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.thenIf
+import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.Surface
@@ -25,6 +28,7 @@ import com.varabyte.kobweb.silk.theme.shapes.clip
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.Div
 
 @Composable
 fun AboutSection(breakpoint: Breakpoint) {
@@ -40,8 +44,8 @@ fun AboutSection(breakpoint: Breakpoint) {
 
         SimpleGrid(
             numColumns = numColumns(base = 1, md = 2), modifier = Modifier.fillMaxWidth().thenIf(
-                    condition = breakpoint > Breakpoint.MD, other = Modifier.height(600.px)
-                ).padding(all = 12.px).border(0.1.px, LineStyle.Solid, Res.Colors.DARK).borderRadius(r = 8.px)
+                condition = breakpoint > Breakpoint.MD, other = Modifier.height(600.px)
+            ).padding(all = 12.px).border(0.1.px, LineStyle.Solid, Res.Colors.DARK).borderRadius(r = 8.px)
         ) {
             LeftSide(breakpoint = breakpoint)
             RightSide(breakpoint = breakpoint)
@@ -104,18 +108,39 @@ fun LeftSide(
 fun RightSide(breakpoint: Breakpoint) {
     Box(
         modifier = Modifier.thenIf(
-                condition = breakpoint > Breakpoint.MD, other = Modifier.height(576.px)
-            )
+            condition = breakpoint > Breakpoint.MD, other = Modifier.height(576.px)
+        )
     ) {
-        Box(
-            modifier = AboutProfileImageStyle.toModifier().borderRadius(10.px).clip(shape = Rect(0, 10.px))
-                .align(Alignment.Center).background(
-                    Res.Colors.PROFILE_BG
-                )
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-            Image(
-                modifier = Modifier.fillMaxWidth().align(Alignment.BottomCenter),
-                src = Res.Drawable.IMAGE_2,
+            Box(
+                modifier = AboutProfileImageStyle.toModifier().borderRadius(10.px).clip(shape = Rect(0, 10.px))
+                    .align(Alignment.CenterHorizontally)
+            ) {
+                Image(
+                    modifier = HoverImageStyle.toModifier()
+                        .then(Modifier.fillMaxWidth().align(Alignment.TopCenter).objectFit(ObjectFit.Cover)).background(
+                            Res.Colors.PROFILE_BG
+                        ),
+                    src = Res.Drawable.IMAGE_2, alt = "Profile image"
+                )
+                Div(Modifier.fillMaxSize().background(Colors.Transparent).toAttrs())
+                Image(
+                    modifier = HoverImageArtStyle.toModifier()
+                        .then(Modifier.fillMaxWidth().align(Alignment.TopCenter).objectFit(ObjectFit.Cover)).background(
+                            Res.Colors.PROFILE_BG
+                        ),
+                    src = Res.Drawable.IMAGE_ART, alt = "Profile image art"
+                )
+            }
+            SpanText(
+                text = Res.String.REVEAL_PROFILE_IMAGE,
+                modifier = AboutSectionDesignationStyle.toModifier().margin(topBottom = 12.px)
+                    .fontFamily(Res.Font.LATO_REGULAR)
+                    .color(Res.Colors.DARK_BLUE)
             )
         }
     }

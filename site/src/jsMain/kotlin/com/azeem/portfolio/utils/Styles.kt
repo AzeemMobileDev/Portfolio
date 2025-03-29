@@ -8,9 +8,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.silk.components.forms.ButtonStyle
 import com.varabyte.kobweb.silk.components.forms.ButtonVars
-import com.varabyte.kobweb.silk.style.CssStyle
-import com.varabyte.kobweb.silk.style.addVariantBase
-import com.varabyte.kobweb.silk.style.base
+import com.varabyte.kobweb.silk.style.*
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.selectors.hover
 import com.varabyte.kobweb.silk.theme.colors.palette.color
@@ -188,15 +186,56 @@ val ProfileImageStyle = CssStyle {
             .borderRadius(100.percent)
             .margin(0.px)
             .objectFit(ObjectFit.Cover)
+            .opacity(100.percent)
     }
     Breakpoint.SM {
-        Modifier.size(250.px)
+        Modifier.size(250.px).opacity(100.percent)
+
     }
     Breakpoint.MD {
-        Modifier.size(275.px)
+        Modifier.size(275.px).opacity(100.percent)
+
     }
     Breakpoint.LG {
-        Modifier.size(375.px)
+        Modifier.size(375.px).opacity(100.percent)
+
+    }
+}
+
+val HoverProfileImageArtStyle = CssStyle {
+    base {
+        Modifier.size(250.px)
+            .borderRadius(100.percent)
+            .margin(0.px)
+            .objectFit(ObjectFit.Cover)
+            .opacity(100.percent)
+            .transition(
+                Transition.of(
+                    property = "opacity",
+                    duration = 200.ms,
+                    delay = null
+                )
+            )
+    }
+    Breakpoint.SM {
+        Modifier.size(250.px).opacity(100.percent)
+
+    }
+    Breakpoint.MD {
+        Modifier.size(275.px).opacity(100.percent)
+
+    }
+    Breakpoint.LG {
+        Modifier.size(375.px).opacity(100.percent)
+
+    }
+    hover {
+        Modifier
+            .opacity(0.percent)
+    }
+    cssRule("onClick") {
+        Modifier
+            .opacity(0.percent)
     }
 }
 
@@ -422,6 +461,34 @@ val SurfaceStyle = CssStyle {
     }
     Breakpoint.LG {
         Modifier.height(45.px)
+    }
+}
+
+val HoverImageStyle = CssStyle {
+    base {
+        Modifier
+            .opacity(100.percent)
+    }
+}
+
+val HoverImageArtStyle = CssStyle {
+    base {
+        Modifier.opacity(100.percent)
+            .transition(
+                Transition.of(
+                    property = "opacity",
+                    duration = 200.ms,
+                    delay = null
+                )
+            )
+    }
+    hover {
+        Modifier
+            .opacity(0.percent)
+    }
+    cssRule("onClick") {
+        Modifier
+            .opacity(0.percent)
     }
 }
 
