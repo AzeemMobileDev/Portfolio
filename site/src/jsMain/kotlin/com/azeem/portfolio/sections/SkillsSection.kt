@@ -22,7 +22,6 @@ import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.Surface
 import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.text.SpanText
-import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.LineStyle
@@ -35,7 +34,7 @@ fun SkillsSection() {
         modifier = HeroSectionStyle.toModifier().id(SKILLS_TITLE), horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        SectionTitle(SKILLS_TITLE.kebabCaseToTitleCamelCase() + " and "+ TOOLS_TITLE.kebabCaseToTitleCamelCase())
+        SectionTitle(SKILLS_TITLE.kebabCaseToTitleCamelCase() + " and " + TOOLS_TITLE.kebabCaseToTitleCamelCase())
 
         Surface(modifier = SurfaceStyle.toModifier()) {}
 
@@ -43,7 +42,7 @@ fun SkillsSection() {
             numColumns = numColumns(base = 2, sm = 2, md = 3, lg = 4),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(topBottom = 12.px)
+                .padding(6.px)
                 .border(
                     0.1.px, LineStyle.Solid, Res.Colors.DARK
                 )
@@ -64,7 +63,7 @@ fun SkillsSection() {
             numColumns = numColumns(base = 2, sm = 2, md = 3, lg = 4),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(topBottom = 12.px)
+                .padding(6.px)
                 .border(
                     0.1.px, LineStyle.Solid, Res.Colors.DARK
                 )
@@ -80,7 +79,9 @@ fun SkillsSection() {
 @Composable
 fun SkillItem(skillModel: Skill, modifier: Modifier) {
     Column(
-        IconsStyle.toModifier().then(modifier.fillMaxWidth().padding(topBottom = 20.px)),
+        HoverBgStyle.toModifier().then(
+            modifier.fillMaxWidth().padding(topBottom = 20.px)
+        ),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(

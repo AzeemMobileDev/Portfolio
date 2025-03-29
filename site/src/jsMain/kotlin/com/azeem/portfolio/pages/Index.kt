@@ -1,10 +1,7 @@
 package com.azeem.portfolio.pages
 
 import androidx.compose.runtime.*
-import com.azeem.portfolio.sections.AboutSection
-import com.azeem.portfolio.sections.FooterSection
-import com.azeem.portfolio.sections.HomeSection
-import com.azeem.portfolio.sections.SkillsSection
+import com.azeem.portfolio.sections.*
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -35,6 +32,7 @@ fun HomePage() {
             HomeSection(ctx = pageContext, breakpoint = breakpoint)
             AboutSection(breakpoint = breakpoint)
             SkillsSection()
+            ExperienceSection(breakpoint = breakpoint)
             Surface(modifier = Modifier.height(30.px)) {}
             FooterSection()
         }

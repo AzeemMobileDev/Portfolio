@@ -68,6 +68,11 @@ fun LeftSide(
         )
         SpanText(
             text = Res.String.PROFESSION,
+            modifier = AboutSectionDesignationStyle.toModifier().margin(bottom = 12.px).fontFamily(Res.Font.LATO_BOLD)
+                .color(Res.Colors.DARK_BLUE)
+        )
+        SpanText(
+            text = Res.String.YEAR_OF_EXP,
             modifier = AboutSectionDesignationStyle.toModifier().margin(bottom = 24.px).fontFamily(Res.Font.LATO_BOLD)
                 .color(Res.Colors.DARK_BLUE)
         )

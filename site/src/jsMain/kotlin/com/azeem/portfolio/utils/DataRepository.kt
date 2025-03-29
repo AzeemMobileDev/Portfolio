@@ -1,6 +1,11 @@
 package com.azeem.portfolio.utils
 
+import com.azeem.portfolio.model.Experience
 import com.azeem.portfolio.model.Skill
+import com.varabyte.kobweb.compose.dom.RawHtml
+import com.varabyte.kobweb.framework.annotations.DelicateApi
+import org.w3c.dom.HTMLBRElement
+import org.w3c.dom.HTMLElement
 
 object DataRepository {
     fun getSkills() = ArrayList<Skill>().apply {
@@ -23,46 +28,48 @@ object DataRepository {
         add(Skill(drawable = Res.Drawable.REACT_NATIVE, title = "React Native"))
         add(Skill(drawable = Res.Drawable.KOBWEB, title = "Kobweb"))
         add(Skill(drawable = Res.Drawable.KTOR, title = "Ktor"))
+        add(Skill(drawable = Res.Drawable.SWIFTUI, title = "SwiftUI"))
     }
 
-    /*fun getExperiences() = ArrayList<ExperienceModel>().apply {
+    fun getExperiences() = ArrayList<Experience>().apply {
         add(
-            ExperienceModel(
-                designation = "Senior Software Engineer",
-                employerName = "HSBC",
-                duration = "Sept 23 - Sept 24",
-                logo = Res.Drawable.HSBC,
-                roleAndResponsibilities = "At HSBC, I worked as an Acting Team Lead of mobile team that consist of 3 iOS developers and 3 Android developers including me. I had a great experience working on First Direct Banking app. For the first time I worked on Scaled Agile framework. I also led team in quarterly Hackathon event where we won best presentation award 2 times, along with awards in few other categories."
+            Experience(
+                id = 1,
+                designation = "Associate Android Developer",
+                employerName = "Influx Integrated Solutions Private Limited.",
+                workDuration = "Nov 2019 - Jun 2024",
+                workLocation = "Chennai, India",
+                companyLogo = Res.Drawable.INFLUX,
+                keyDuties = "Developed and maintained mobile applications based on cinema ticket booking system in real time using the dedicated middleware backend system called INJIN. " +
+                        "Had done various code reviews and helped others to achieve the standard coding practices. " +
+                        "Had worked in multiple cinema ticketing applications based on various countries."
             )
         )
         add(
-            ExperienceModel(
-                designation = "Senior Software Engineer",
-                employerName = "Bajaj Markets",
-                duration = "Sept 21 - Sept 23",
-                logo = Res.Drawable.BAJAJ_MARKETS,
-                roleAndResponsibilities = "At Bajaj Markets, I worked on both in house projects and client projects. Related to in house projects, I specifically worked on developing Insurance SDK that is being used in both Bajaj Markets and Bajaj Finserv Android applications. During last 6 months of tenure, I got an opportunity to work on client project, Ambit Finvest, where I was leading the team of 3 Android developers including me."
+            Experience(
+                id = 2,
+                designation = "Android Developer",
+                employerName = "doodleblue Innovations Private Limited.",
+                workDuration = "Feb 2017 - May 2019",
+                workLocation = "Chennai, India",
+                companyLogo = Res.Drawable.DOODLEBLUE,
+                keyDuties = "Developed and maintained several mobile applications using the latest technologies of Android development and coding done using Kotlin. " +
+                        "Had worked on different types of scenarios and business ideas. " +
+                        "Had worked on more than 20 Android projects for this company."
             )
         )
         add(
-            ExperienceModel(
-                designation = "Software Engineer",
-                employerName = "Entrata",
-                duration = "July 18 - Sept 21",
-                logo = Res.Drawable.ENTRATA,
-                roleAndResponsibilities = "Working at Entrata has made long lasting impact on my career. At Entrata, I was working as an individual contributor in the team of 3 Android developers. Strictly following coding standards and meeting deadlines made me more disciplined. I worked on Entrata Facilities app, that was my first project built using Kotlin programming language. I worked at Entrata for 3 years and 2 months."
+            Experience(
+                id = 3,
+                designation = "Android Developer",
+                employerName = "Cogzidel Technologies Private Limited.",
+                workDuration = "Sept 2015 - Oct 2016",
+                workLocation = "Madurai, India",
+                companyLogo = Res.Drawable.COGZIDEL,
+                keyDuties = "Started career as junior Android developer, worked for 6 months as junior developer. Developed and maintained several mobile applications using the latest technologies of Android development and coding done using Java, mostly product type applications inspired from Uber and Airbnb."
             )
         )
-        add(
-            ExperienceModel(
-                designation = "Software Engineer",
-                employerName = "Veracity Software",
-                duration = "OCt 17 - June 18",
-                logo = Res.Drawable.VERACITY_SOFTWARE,
-                roleAndResponsibilities = "At Veracity Software, I worked as an Associate Android Deeveloper. This was the initial phase of my career, where I got to work on one IOT based proof of concept. This POC was being developed for Harmen International. The idea was to collect Car data like current location, speed, fuel status, crash reporting. Sensors from the vehicle were sending data to Firebase database and realtime updates were visible on the app side."
-            )
-        )
-    }*/
+    }
 
     /*fun getProjects() = ArrayList<ProjectModel>().apply {
         add(

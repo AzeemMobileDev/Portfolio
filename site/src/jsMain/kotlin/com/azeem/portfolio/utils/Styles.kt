@@ -8,7 +8,6 @@ import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.silk.components.forms.ButtonStyle
 import com.varabyte.kobweb.silk.components.forms.ButtonVars
-import com.varabyte.kobweb.silk.components.layout.Surface
 import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.addVariantBase
 import com.varabyte.kobweb.silk.style.base
@@ -40,9 +39,9 @@ val UncoloredButtonVariant = ButtonStyle.addVariantBase {
     Modifier.setVariable(ButtonVars.BackgroundDefaultColor, Colors.Transparent)
 }
 
-val IconsStyle = CssStyle {
+val HoverBgStyle = CssStyle {
     hover {
-        Modifier.scale(1.2)
+        Modifier.background(Res.Colors.HOME_BG)
     }
 }
 
