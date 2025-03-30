@@ -7,5 +7,12 @@ data class Experience(
     val workDuration: String,
     val workLocation: String,
     val companyLogo: String,
-    val keyDuties: List<String>
+    val keyDuties: List<String>,
+    val projects: List<Projects>
+)
+
+data class Projects(
+    val name: String,
+    val description: List<String>,
+    val link: String? = null
 )

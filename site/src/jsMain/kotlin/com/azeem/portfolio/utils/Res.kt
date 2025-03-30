@@ -23,7 +23,7 @@ object Res {
         const val AREA_OF_INTEREST_TITLE = "Area of Interest"
         const val TOOLS_TITLE = "tools"
         const val EXPERIENCE_TITLE = "experience"
-        const val PROJECTS_TITLE = "projects"
+        const val PROJECTS = "Key Projects worked:"
         const val PROFESSION = "Native Android Developer"
         const val YEAR_OF_EXP = "8+ years of experience"
         val ABOUT_ME = listOf(

@@ -41,7 +41,7 @@ fun HomePage() {
             HomeSection(ctx = pageContext, breakpoint = breakpoint)
             AboutSection(breakpoint = breakpoint)
             SkillsSection()
-            ExperienceSection(breakpoint = breakpoint)
+            ExperienceSection(ctx = pageContext, breakpoint = breakpoint)
             Surface(modifier = Modifier.height(30.px)) {}
             FooterSection()
         }

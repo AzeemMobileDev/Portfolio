@@ -28,7 +28,6 @@ import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import com.varabyte.kobweb.silk.theme.shapes.Circle
 import com.varabyte.kobweb.silk.theme.shapes.clip
-import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.em
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
@@ -127,7 +126,7 @@ fun HomeSection(
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center,
-                    modifier = Modifier.margin(right = 5.px)
+                    modifier = Modifier.margin(top = if (breakpoint > Breakpoint.MD) 20.px else 10.px, right = 5.px)
                 ) {
                     FaLinkedin(
                         modifier = ShareButtonStyle.toModifier().then(Modifier.margin(right = 10.px))
@@ -152,7 +151,7 @@ fun HomeSection(
                     )
                 }
 
-                Box(
+                /*Box(
                     modifier = ResumeButtonStyle.toModifier()
                         .margin(left = 5.px)
                         .onClick { ctx.router.navigateTo(Res.String.RESUME) }
@@ -190,7 +189,7 @@ fun HomeSection(
                                 )
                         )
                     }
-                }
+                }*/
             }
         }
     }

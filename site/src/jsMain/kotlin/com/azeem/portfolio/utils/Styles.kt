@@ -40,10 +40,12 @@ val UncoloredButtonVariant = ButtonStyle.addVariantBase {
 
 val HoverBgStyle = CssStyle {
     hover {
-        Modifier.background(when (colorMode) {
-            ColorMode.LIGHT -> Res.Colors.HOME_BG
-            ColorMode.DARK -> Res.Colors.DARK
-        })
+        Modifier.background(
+            when (colorMode) {
+                ColorMode.LIGHT -> Res.Colors.HOME_BG
+                ColorMode.DARK -> Res.Colors.DARK
+            }
+        )
     }
 }
 
@@ -377,6 +379,64 @@ val ResumeButtonStyle = CssStyle {
 
     hover {
         Modifier.scale(1.1).cursor(Cursor.Pointer)
+    }
+}
+
+val PlayStoreButtonStyle = CssStyle {
+    base {
+        Modifier
+            .fillMaxWidth()
+            .height(35.px)
+            .fontSize(12.px)
+    }
+    Breakpoint.SM {
+        Modifier.fillMaxWidth()
+            .height(40.px)
+            .fontSize(12.px)
+
+    }
+    Breakpoint.MD {
+        Modifier.fillMaxWidth()
+            .height(45.px)
+            .fontSize(13.px)
+    }
+    Breakpoint.LG {
+        Modifier.fillMaxWidth()
+            .height(50.px)
+            .fontSize(14.px)
+    }
+
+    hover {
+        Modifier.cursor(Cursor.Pointer)
+    }
+}
+
+val NAPlayStoreButtonStyle = CssStyle {
+    base {
+        Modifier
+            .fillMaxWidth()
+            .height(35.px)
+            .fontSize(12.px)
+    }
+    Breakpoint.SM {
+        Modifier.fillMaxWidth()
+            .height(40.px)
+            .fontSize(12.px)
+
+    }
+    Breakpoint.MD {
+        Modifier.fillMaxWidth()
+            .height(45.px)
+            .fontSize(13.px)
+    }
+    Breakpoint.LG {
+        Modifier.fillMaxWidth()
+            .height(50.px)
+            .fontSize(14.px)
+    }
+
+    hover {
+        Modifier.cursor(Cursor.NotAllowed)
     }
 }
 
