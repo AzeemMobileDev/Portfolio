@@ -1,8 +1,9 @@
-package com.azeem.portfolio.sections
+package com.azeem.portfolio.components.sections
 
 import androidx.compose.runtime.Composable
+import com.azeem.portfolio.components.widgets.BulletList
 import com.azeem.portfolio.utils.*
-import com.azeem.portfolio.widgets.SectionTitle
+import com.azeem.portfolio.components.widgets.SectionTitle
 import com.varabyte.kobweb.browser.util.kebabCaseToTitleCamelCase
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.ObjectFit
@@ -10,6 +11,7 @@ import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
+import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
@@ -23,12 +25,14 @@ import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toModifier
+import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import com.varabyte.kobweb.silk.theme.shapes.Rect
 import com.varabyte.kobweb.silk.theme.shapes.clip
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
+import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun AboutSection(breakpoint: Breakpoint) {
@@ -44,8 +48,14 @@ fun AboutSection(breakpoint: Breakpoint) {
 
         SimpleGrid(
             numColumns = numColumns(base = 1, md = 2), modifier = Modifier.fillMaxWidth().thenIf(
-                condition = breakpoint > Breakpoint.MD, other = Modifier.height(600.px)
-            ).padding(all = 12.px).border(0.1.px, LineStyle.Solid, Res.Colors.DARK).borderRadius(r = 8.px)
+                condition = breakpoint > Breakpoint.MD, other = Modifier.fillMaxHeight()
+            ).padding(all = 12.px).border(
+                0.1.px, LineStyle.Solid,
+                when (ColorMode.current) {
+                    ColorMode.LIGHT -> Res.Colors.DARK
+                    ColorMode.DARK -> Res.Colors.WHITE
+                }
+            ).borderRadius(r = 8.px)
         ) {
             LeftSide(breakpoint = breakpoint)
             RightSide(breakpoint = breakpoint)
@@ -65,7 +75,12 @@ fun LeftSide(
         SpanText(
             text = Res.String.NAME,
             modifier = AboutSectionHeadingStyle.toModifier().margin(bottom = 12.px).fontFamily(Res.Font.LATO_BLACK)
-                .color(Res.Colors.DARK_BLUE).fontWeight(FontWeight.Bold).textAlign(
+                .color(
+                    when (ColorMode.current) {
+                        ColorMode.LIGHT -> Res.Colors.DARK_BLUE
+                        ColorMode.DARK -> Res.Colors.WHITE
+                    }
+                ).fontWeight(FontWeight.Bold).textAlign(
                     if (breakpoint <= Breakpoint.SM) TextAlign.Center
                     else TextAlign.Start
                 )
@@ -73,12 +88,22 @@ fun LeftSide(
         SpanText(
             text = Res.String.PROFESSION,
             modifier = AboutSectionDesignationStyle.toModifier().margin(bottom = 12.px).fontFamily(Res.Font.LATO_BOLD)
-                .color(Res.Colors.DARK_BLUE)
+                .color(
+                    when (ColorMode.current) {
+                        ColorMode.LIGHT -> Res.Colors.DARK_BLUE
+                        ColorMode.DARK -> Res.Colors.WHITE
+                    }
+                )
         )
         SpanText(
             text = Res.String.YEAR_OF_EXP,
             modifier = AboutSectionDesignationStyle.toModifier().margin(bottom = 24.px).fontFamily(Res.Font.LATO_BOLD)
-                .color(Res.Colors.DARK_BLUE)
+                .color(
+                    when (ColorMode.current) {
+                        ColorMode.LIGHT -> Res.Colors.DARK_BLUE
+                        ColorMode.DARK -> Res.Colors.WHITE
+                    }
+                )
         )
 
         Surface(
@@ -87,7 +112,10 @@ fun LeftSide(
                 .fillMaxWidth()
                 .margin(bottom = 24.px)
                 .background(
-                    Res.Colors.DARK_BLUE
+                    when (ColorMode.current) {
+                        ColorMode.LIGHT -> Res.Colors.DARK_BLUE
+                        ColorMode.DARK -> Res.Colors.WHITE
+                    }
                 )
                 .align(
                     if (breakpoint <= Breakpoint.SM) Alignment.CenterHorizontally
@@ -95,12 +123,7 @@ fun LeftSide(
                 )
         ) {}
 
-        SpanText(
-            modifier = AboutTextStyle.toModifier().fontFamily(Res.Font.LATO_REGULAR).color(Res.Colors.DARK_BLUE)
-                .opacity(75.percent).lineHeight(2).margin(bottom = 36.px).textAlign(
-                    TextAlign.Justify
-                ), text = Res.String.ABOUT_ME
-        )
+        BulletList(Res.String.ABOUT_ME)
     }
 }
 
@@ -140,7 +163,12 @@ fun RightSide(breakpoint: Breakpoint) {
                 text = Res.String.REVEAL_PROFILE_IMAGE,
                 modifier = AboutSectionDesignationStyle.toModifier().margin(topBottom = 12.px)
                     .fontFamily(Res.Font.LATO_REGULAR)
-                    .color(Res.Colors.DARK_BLUE)
+                    .color(
+                        when (ColorMode.current) {
+                            ColorMode.LIGHT -> Res.Colors.DARK_BLUE
+                            ColorMode.DARK -> Res.Colors.WHITE
+                        }
+                    )
             )
         }
     }

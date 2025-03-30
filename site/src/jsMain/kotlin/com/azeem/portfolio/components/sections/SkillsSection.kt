@@ -1,4 +1,4 @@
-package com.azeem.portfolio.sections
+package com.azeem.portfolio.components.sections
 
 import androidx.compose.runtime.Composable
 import com.azeem.portfolio.model.Skill
@@ -6,7 +6,7 @@ import com.azeem.portfolio.utils.*
 import com.azeem.portfolio.utils.Res.String.AREA_OF_INTEREST_TITLE
 import com.azeem.portfolio.utils.Res.String.SKILLS_TITLE
 import com.azeem.portfolio.utils.Res.String.TOOLS_TITLE
-import com.azeem.portfolio.widgets.SectionTitle
+import com.azeem.portfolio.components.widgets.SectionTitle
 import com.varabyte.kobweb.browser.util.kebabCaseToTitleCamelCase
 import com.varabyte.kobweb.compose.css.MixBlendMode
 import com.varabyte.kobweb.compose.css.TextAlign
@@ -44,7 +44,10 @@ fun SkillsSection() {
                 .fillMaxWidth()
                 .padding(6.px)
                 .border(
-                    0.1.px, LineStyle.Solid, Res.Colors.DARK
+                    0.1.px, LineStyle.Solid, when (ColorMode.current) {
+                        ColorMode.LIGHT -> Res.Colors.DARK
+                        ColorMode.DARK -> Res.Colors.WHITE
+                    }
                 )
                 .borderRadius(r = 8.px)
         ) {
@@ -65,7 +68,10 @@ fun SkillsSection() {
                 .fillMaxWidth()
                 .padding(6.px)
                 .border(
-                    0.1.px, LineStyle.Solid, Res.Colors.DARK
+                    0.1.px, LineStyle.Solid, when (ColorMode.current) {
+                        ColorMode.LIGHT -> Res.Colors.DARK
+                        ColorMode.DARK -> Res.Colors.WHITE
+                    }
                 )
                 .borderRadius(r = 8.px)
         ) {

@@ -11,6 +11,7 @@ import com.varabyte.kobweb.silk.components.forms.ButtonVars
 import com.varabyte.kobweb.silk.style.*
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.selectors.hover
+import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import com.varabyte.kobweb.silk.theme.colors.palette.color
 import com.varabyte.kobweb.silk.theme.colors.palette.toPalette
 import org.jetbrains.compose.web.css.*
@@ -39,7 +40,10 @@ val UncoloredButtonVariant = ButtonStyle.addVariantBase {
 
 val HoverBgStyle = CssStyle {
     hover {
-        Modifier.background(Res.Colors.HOME_BG)
+        Modifier.background(when (colorMode) {
+            ColorMode.LIGHT -> Res.Colors.HOME_BG
+            ColorMode.DARK -> Res.Colors.DARK
+        })
     }
 }
 
@@ -318,13 +322,13 @@ val DesignationStyle = CssStyle {
 val AboutSectionDesignationStyle = CssStyle {
     base {
         Modifier
-            .fontSize(12.px)
+            .fontSize(14.px)
     }
     Breakpoint.SM {
-        Modifier.fontSize(12.px)
+        Modifier.fontSize(14.px)
     }
     Breakpoint.MD {
-        Modifier.fontSize(15.px)
+        Modifier.fontSize(16.px)
     }
     Breakpoint.LG {
         Modifier.fontSize(18.px)
@@ -334,40 +338,40 @@ val AboutSectionDesignationStyle = CssStyle {
 val AboutTextStyle = CssStyle {
     base {
         Modifier
-            .fontSize(12.5.px)
+            .fontSize(14.5.px)
     }
     Breakpoint.SM {
-        Modifier.fontSize(12.5.px)
+        Modifier.fontSize(14.5.px)
     }
     Breakpoint.MD {
-        Modifier.fontSize(13.px)
+        Modifier.fontSize(15.px)
     }
     Breakpoint.LG {
-        Modifier.fontSize(14.px)
+        Modifier.fontSize(16.px)
     }
 }
 
 val ResumeButtonStyle = CssStyle {
     base {
         Modifier
-            .width(105.px)
-            .height(30.px)
+            .width(115.px)
+            .height(35.px)
             .fontSize(12.px)
     }
     Breakpoint.SM {
-        Modifier.width(115.px)
-            .height(35.px)
+        Modifier.width(125.px)
+            .height(40.px)
             .fontSize(12.px)
 
     }
     Breakpoint.MD {
-        Modifier.width(125.px)
-            .height(40.px)
+        Modifier.width(135.px)
+            .height(45.px)
             .fontSize(13.px)
     }
     Breakpoint.LG {
-        Modifier.width(135.px)
-            .height(40.px)
+        Modifier.width(145.px)
+            .height(50.px)
             .fontSize(14.px)
     }
 
@@ -519,7 +523,7 @@ val HeroSectionStyle = CssStyle {
     }
     Breakpoint.LG {
         Modifier
-            .width(95.percent)
+            .width(80.percent)
             .fontSize(3.cssRem)
             .padding(top = 3.cssRem)
     }
@@ -529,31 +533,27 @@ val HomeSectionStyle = CssStyle {
     base {
         Modifier
             .width(100.percent)
-            .height(100.vh)
-            .padding(top = 50.px)
+            .height(600.px)
     }
     Breakpoint.ZERO {
         Modifier
             .width(100.percent)
-            .padding(top = 50.px)
+            .height(550.px)
     }
     Breakpoint.SM {
         Modifier
             .width(100.percent)
-            .height(100.vh)
-            .padding(top = 50.px)
+            .height(550.px)
     }
     Breakpoint.MD {
         Modifier
             .width(100.percent)
-            .height(100.vh)
-            .padding(top = 50.px)
+            .height(625.px)
     }
     Breakpoint.LG {
         Modifier
             .width(100.percent)
-            .height(100.vh)
-            .padding(top = 50.px)
+            .height(725.px)
     }
 }
 
@@ -587,5 +587,37 @@ val AboutStyle = CssStyle {
             .width(100.percent)
             .fontSize(3.cssRem)
             .height(100.vh)
+    }
+}
+
+val EmployerTextStyle = CssStyle {
+    base {
+        Modifier
+            .fontSize(15.px)
+    }
+    Breakpoint.SM {
+        Modifier.fontSize(15.px)
+    }
+    Breakpoint.MD {
+        Modifier.fontSize(16.px)
+    }
+    Breakpoint.LG {
+        Modifier.fontSize(17.px)
+    }
+}
+
+val EmployerLocationTextStyle = CssStyle {
+    base {
+        Modifier
+            .fontSize(14.px)
+    }
+    Breakpoint.SM {
+        Modifier.fontSize(14.px)
+    }
+    Breakpoint.MD {
+        Modifier.fontSize(15.px)
+    }
+    Breakpoint.LG {
+        Modifier.fontSize(16.px)
     }
 }

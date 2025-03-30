@@ -1,10 +1,12 @@
-package com.azeem.portfolio.sections
+package com.azeem.portfolio.components.sections
 
 import androidx.compose.runtime.Composable
+import com.azeem.portfolio.components.widgets.BulletList
+import com.azeem.portfolio.components.widgets.BulletedExpList
 import com.azeem.portfolio.model.Experience
 import com.azeem.portfolio.utils.*
 import com.azeem.portfolio.utils.Res.String.EXPERIENCE_TITLE
-import com.azeem.portfolio.widgets.SectionTitle
+import com.azeem.portfolio.components.widgets.SectionTitle
 import com.varabyte.kobweb.browser.util.kebabCaseToTitleCamelCase
 import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -22,7 +24,6 @@ import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
-import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.px
 
@@ -53,7 +54,10 @@ fun ExperienceItem(experience: Experience, breakpoint: Breakpoint, modifier: Mod
     Column(
         modifier = HoverBgStyle.toModifier().then(
             modifier.border(
-                0.1.px, LineStyle.Solid, Res.Colors.DARK
+                0.1.px, LineStyle.Solid, when (ColorMode.current) {
+                    ColorMode.LIGHT -> Res.Colors.DARK
+                    ColorMode.DARK -> Res.Colors.WHITE
+                }
             ).borderRadius(r = 8.px).padding(10.px).margin(bottom = 20.px)
                 .thenIf(
                     condition = breakpoint > Breakpoint.MD && experience.id % 2 == 1,
@@ -77,7 +81,7 @@ fun ExperienceItem(experience: Experience, breakpoint: Breakpoint, modifier: Mod
                 Column {
                     SpanText(
                         text = experience.employerName,
-                        modifier = Modifier
+                        modifier = EmployerTextStyle.toModifier()
                             .color(
                                 when (ColorMode.current) {
                                     ColorMode.LIGHT -> Res.Colors.DARK
@@ -85,12 +89,11 @@ fun ExperienceItem(experience: Experience, breakpoint: Breakpoint, modifier: Mod
                                 }
                             )
                             .fontFamily(Res.Font.LATO_BOLD)
-                            .fontSize(15.px)
                     )
 
                     SpanText(
                         text = experience.workLocation,
-                        modifier = Modifier
+                        modifier = EmployerLocationTextStyle.toModifier()
                             .color(
                                 when (ColorMode.current) {
                                     ColorMode.LIGHT -> Res.Colors.DARK
@@ -98,7 +101,7 @@ fun ExperienceItem(experience: Experience, breakpoint: Breakpoint, modifier: Mod
                                 }
                             )
                             .fontFamily(Res.Font.LATO_REGULAR)
-                            .fontSize(14.px).margin(top = 4.px)
+                            .margin(top = 4.px)
                     )
                 }
 
@@ -106,7 +109,7 @@ fun ExperienceItem(experience: Experience, breakpoint: Breakpoint, modifier: Mod
 
             SpanText(
                 text = experience.designation + " (${experience.workDuration})",
-                modifier = Modifier
+                modifier = EmployerTextStyle.toModifier()
                     .color(
                         when (ColorMode.current) {
                             ColorMode.LIGHT -> Res.Colors.DARK
@@ -114,27 +117,12 @@ fun ExperienceItem(experience: Experience, breakpoint: Breakpoint, modifier: Mod
                         }
                     )
                     .fontFamily(Res.Font.LATO_BOLD)
-                    .fontSize(13.5.px)
                     .margin(top = 5.px)
             )
 
             SpanText(
                 text = Res.String.KEY_DUTIES.kebabCaseToTitleCamelCase(),
-                modifier = Modifier
-                    .color(
-                        when (ColorMode.current) {
-                            ColorMode.LIGHT -> Res.Colors.DARK
-                            ColorMode.DARK -> Res.Colors.WHITE
-                        }
-                    )
-                    .fontFamily(Res.Font.LATO_BLACK)
-                    .fontSize(13.5.px)
-                    .margin(top = 20.px)
-            )
-
-            SpanText(
-                text = experience.keyDuties,
-                modifier = Modifier
+                modifier = EmployerLocationTextStyle.toModifier()
                     .color(
                         when (ColorMode.current) {
                             ColorMode.LIGHT -> Res.Colors.DARK
@@ -142,10 +130,10 @@ fun ExperienceItem(experience: Experience, breakpoint: Breakpoint, modifier: Mod
                         }
                     )
                     .fontFamily(Res.Font.LATO_BOLD)
-                    .fontSize(12.5.px).margin(top = 5.px).textAlign(
-                        TextAlign.Justify
-                    )
+                    .margin(top = 20.px)
             )
+
+            BulletedExpList(experience.keyDuties)
         }
     }
 }

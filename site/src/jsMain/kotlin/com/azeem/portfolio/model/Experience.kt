@@ -7,5 +7,5 @@ data class Experience(
     val workDuration: String,
     val workLocation: String,
     val companyLogo: String,
-    val keyDuties: String
+    val keyDuties: List<String>
 )

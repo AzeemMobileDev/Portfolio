@@ -1,4 +1,4 @@
-package com.azeem.portfolio.sections
+package com.azeem.portfolio.components.sections
 
 import androidx.compose.runtime.Composable
 import com.azeem.portfolio.utils.FooterStyle

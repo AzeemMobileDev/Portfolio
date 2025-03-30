@@ -9,6 +9,7 @@ object Res {
         val DARK = Color.rgb(0x377292)
         val DARK_BLUE = Color.rgb(0x293f50)
         val WHITE = Color.rgb(0xffffff)
+        val BLACK = Color.rgb(0x000000)
         val GREY = Color.rgb(0x9ca7b8)
         val GREY_DARK = Color.rgb(0x606060)
     }
@@ -25,7 +26,16 @@ object Res {
         const val PROJECTS_TITLE = "projects"
         const val PROFESSION = "Native Android Developer"
         const val YEAR_OF_EXP = "8+ years of experience"
-        const val ABOUT_ME = "Sr. Application Developer specialized in writing code with Java and Kotlin for creating Android applications with total experience of 8+ years. Experienced Android Developer with a demonstrated history of working in the information technology and services industry."
+        val ABOUT_ME = listOf(
+            "  Sr. Application Developer specialized in writing code with Java and Kotlin for creating Android applications with total experience of 8+ years.",
+            "  Developed applications with Kotlin, Core Java, Android and Jetpack components.",
+            "  5 months of experience in Designing UI using Jetpack Compose.",
+            "  Basic Cross Platform application development by using Flutter and React Native.",
+            "  Experience of developing applications with MVP, MVVM and Clean architecture.",
+            "  Knowledge of Offline Storage (Room), Threading and Networking.",
+            "  Good knowledge of Firebase Push Notifications, Crashlytics, Dynamic Link, Analytics.",
+            "  Good knowledge of Version Control System SVN and Git(Github, Gitlab)."
+        )
         const val KEY_DUTIES = "Key Duties:"
         const val GITHUB_URL = "https://github.com/AzeemMobileDev"
         const val LINKEDIN_URL = "https://www.linkedin.com/in/mohamed-azeem-m/"
@@ -60,7 +70,7 @@ object Res {
         const val JETPACK_COMPOSE = "/images/jetpack-compose.png"
         const val ANDROID_JETPACK = "/images/android-jetpack.svg"
         const val ANDROID_STUDIO = "/images/android-studio.svg"
-        const val JSON = "/images/json.svg"
+        const val JSON = "/images/json.png"
         const val RESUME = "/images/resume.svg"
 
         // Experience

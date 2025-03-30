@@ -1,4 +1,4 @@
-package com.azeem.portfolio.widgets
+package com.azeem.portfolio.components.widgets
 
 import androidx.compose.runtime.Composable
 import com.azeem.portfolio.utils.Res
