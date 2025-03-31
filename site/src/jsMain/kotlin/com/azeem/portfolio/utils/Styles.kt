@@ -10,6 +10,7 @@ import com.varabyte.kobweb.silk.components.forms.ButtonStyle
 import com.varabyte.kobweb.silk.components.forms.ButtonVars
 import com.varabyte.kobweb.silk.style.*
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.selectors.autofill
 import com.varabyte.kobweb.silk.style.selectors.hover
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import com.varabyte.kobweb.silk.theme.colors.palette.color
@@ -385,24 +386,24 @@ val ResumeButtonStyle = CssStyle {
 val PlayStoreButtonStyle = CssStyle {
     base {
         Modifier
-            .fillMaxWidth()
+            .width(180.px)
             .height(35.px)
             .fontSize(12.px)
     }
     Breakpoint.SM {
-        Modifier.fillMaxWidth()
+        Modifier.width(180.px)
             .height(40.px)
             .fontSize(12.px)
 
     }
     Breakpoint.MD {
-        Modifier.fillMaxWidth()
-            .height(45.px)
+        Modifier.width(180.px)
+            .height(40.px)
             .fontSize(13.px)
     }
     Breakpoint.LG {
-        Modifier.fillMaxWidth()
-            .height(50.px)
+        Modifier.width(200.px)
+            .height(45.px)
             .fontSize(14.px)
     }
 
@@ -414,24 +415,24 @@ val PlayStoreButtonStyle = CssStyle {
 val NAPlayStoreButtonStyle = CssStyle {
     base {
         Modifier
-            .fillMaxWidth()
+            .width(280.px)
             .height(35.px)
             .fontSize(12.px)
     }
     Breakpoint.SM {
-        Modifier.fillMaxWidth()
+        Modifier.width(260.px)
             .height(40.px)
             .fontSize(12.px)
 
     }
     Breakpoint.MD {
-        Modifier.fillMaxWidth()
-            .height(45.px)
+        Modifier.width(280.px)
+            .height(40.px)
             .fontSize(13.px)
     }
     Breakpoint.LG {
-        Modifier.fillMaxWidth()
-            .height(50.px)
+        Modifier.width(310.px)
+            .height(45.px)
             .fontSize(14.px)
     }
 
@@ -663,6 +664,30 @@ val EmployerTextStyle = CssStyle {
     }
     Breakpoint.LG {
         Modifier.fontSize(17.px)
+    }
+}
+
+val CertificateLinkTextStyle = CssStyle {
+    base {
+        Modifier
+            .fontSize(15.px)
+            .textDecorationLine(TextDecorationLine.Underline)
+    }
+    Breakpoint.SM {
+        Modifier.fontSize(15.px)
+            .textDecorationLine(TextDecorationLine.Underline)
+    }
+    Breakpoint.MD {
+        Modifier.fontSize(16.px)
+            .textDecorationLine(TextDecorationLine.Underline)
+    }
+    Breakpoint.LG {
+        Modifier.fontSize(17.px)
+            .textDecorationLine(TextDecorationLine.Underline)
+    }
+
+    hover {
+        Modifier.cursor(Cursor.Pointer)
     }
 }
 

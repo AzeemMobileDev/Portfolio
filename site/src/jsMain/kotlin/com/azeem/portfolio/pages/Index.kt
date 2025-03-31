@@ -42,8 +42,9 @@ fun HomePage() {
             AboutSection(breakpoint = breakpoint)
             SkillsSection()
             ExperienceSection(ctx = pageContext, breakpoint = breakpoint)
+            CertificationsSection(ctx = pageContext, breakpoint = breakpoint)
             Surface(modifier = Modifier.height(30.px)) {}
-            FooterSection()
+            FooterSection(ctx = pageContext)
         }
     }
 }

@@ -16,7 +16,6 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
-import com.varabyte.kobweb.compose.ui.thenIf
 import com.varabyte.kobweb.core.PageContext
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
@@ -41,7 +40,7 @@ fun ExperienceSection(ctx: PageContext, breakpoint: Breakpoint) {
         Surface(modifier = SurfaceStyle.toModifier()) {}
 
         SimpleGrid(
-            numColumns = numColumns(base = 1, md = 2),
+            numColumns = numColumns(base = 1, md = 1),
             modifier = Modifier.fillMaxWidth()
         ) {
             DataRepository.getExperiences().forEach { experienceItem ->
@@ -60,11 +59,7 @@ fun ExperienceItem(experience: Experience, ctx: PageContext, breakpoint: Breakpo
                     ColorMode.LIGHT -> Res.Colors.DARK
                     ColorMode.DARK -> Res.Colors.WHITE
                 }
-            ).borderRadius(r = 8.px).padding(10.px).margin(bottom = 20.px)
-                .thenIf(
-                    condition = breakpoint > Breakpoint.MD && experience.id % 2 == 1,
-                    other = Modifier.margin(right = 20.px, bottom = 20.px)
-                )
+            ).borderRadius(r = 8.px).padding(10.px).margin(bottom = if (experience.id < 3) 20.px else 0.px)
         )
     ) {
         Column(modifier = Modifier.padding(10.px)) {
@@ -213,8 +208,7 @@ fun ProjectItem(project: Projects, ctx: PageContext, breakpoint: Breakpoint) {
                     )
                 }
             }
-        }
-        else {
+        } else {
             Box(
                 modifier = PlayStoreButtonStyle.toModifier()
                     .margin(top = 20.px)
@@ -223,7 +217,7 @@ fun ProjectItem(project: Projects, ctx: PageContext, breakpoint: Breakpoint) {
                     .borderRadius(r = 5.px)
                     .background(
                         when (ColorMode.current) {
-                            ColorMode.LIGHT -> Res.Colors.DARK
+                            ColorMode.LIGHT -> Res.Colors.DARK_BLUE
                             ColorMode.DARK -> Res.Colors.WHITE
                         }
                     )

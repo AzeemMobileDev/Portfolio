@@ -23,6 +23,7 @@ object Res {
         const val AREA_OF_INTEREST_TITLE = "Area of Interest"
         const val TOOLS_TITLE = "tools"
         const val EXPERIENCE_TITLE = "experience"
+        const val CERTIFICATIONS_TITLE = "certifications"
         const val PROJECTS = "Key Projects worked:"
         const val PROFESSION = "Native Android Developer"
         const val YEAR_OF_EXP = "8+ years of experience"
@@ -72,6 +73,7 @@ object Res {
         const val ANDROID_STUDIO = "/images/android-studio.svg"
         const val JSON = "/images/json.png"
         const val RESUME = "/images/resume.svg"
+        const val UDEMY = "/images/udemy-logo.svg"
 
         // Experience
         const val COGZIDEL = "/images/cogzidel_logo.jpeg"

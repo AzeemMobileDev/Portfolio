@@ -1,5 +1,6 @@
 package com.azeem.portfolio.utils
 
+import com.azeem.portfolio.model.Certificates
 import com.azeem.portfolio.model.Experience
 import com.azeem.portfolio.model.Projects
 import com.azeem.portfolio.model.Skill
@@ -114,7 +115,8 @@ object DataRepository {
                 companyLogo = Res.Drawable.COGZIDEL,
                 keyDuties = listOf(
                     "  Started career as junior Android developer, worked for 6 months as junior developer.",
-                    "  Developed and maintained several mobile applications using the latest technologies of Android development and coding done using Java, mostly product type applications inspired from Uber and Airbnb."
+                    "  Developed and maintained several mobile applications using then latest technologies of Android development and coding done using Java, mostly product type applications inspired from Uber and Airbnb.",
+                    "  Developed and maintained mobile application for US based client using then latest technologies of Android development and coding done using Java, inspired from Instagram and Twitter."
                 ),
                 projects = listOf(
                     Projects(
@@ -127,6 +129,25 @@ object DataRepository {
                         link = null
                     )
                 )
+            )
+        )
+    }
+
+    fun getCertificates() = ArrayList<Certificates>().apply {
+        add(
+            Certificates(
+                name = "Build a Website from Scratch with Kotlin and Jetpack Compose",
+                issueDate = "Issued Mar 2025",
+                certificateLogo = Res.Drawable.UDEMY,
+                link = "https://www.udemy.com/certificate/UC-aa6a285a-aa7c-443a-a532-638585b8bfb7/"
+            )
+        )
+        add(
+            Certificates(
+                name = "Flutter & Dart - The Complete Guide [2025 Edition]",
+                issueDate = "Issued Feb 2025",
+                certificateLogo = Res.Drawable.UDEMY,
+                link = "https://www.udemy.com/certificate/UC-beeba971-0e37-4bbb-a2fd-13c7fc3bddfb/"
             )
         )
     }
