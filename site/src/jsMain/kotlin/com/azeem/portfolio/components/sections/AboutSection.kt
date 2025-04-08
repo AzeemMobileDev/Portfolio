@@ -131,7 +131,7 @@ fun LeftSide(
 fun RightSide(breakpoint: Breakpoint) {
     Box(
         modifier = Modifier.thenIf(
-            condition = breakpoint > Breakpoint.MD, other = Modifier.height(576.px)
+            condition = breakpoint > Breakpoint.MD, other = Modifier.height(756.px)
         )
     ) {
         Column(
@@ -144,32 +144,10 @@ fun RightSide(breakpoint: Breakpoint) {
                     .align(Alignment.CenterHorizontally)
             ) {
                 Image(
-                    modifier = HoverImageStyle.toModifier()
-                        .then(Modifier.fillMaxWidth().align(Alignment.TopCenter).objectFit(ObjectFit.Cover)).background(
-                            Res.Colors.PROFILE_BG
-                        ),
+                    modifier = Modifier.fillMaxWidth().align(Alignment.Center),
                     src = Res.Drawable.IMAGE_2, alt = "Profile image"
                 )
-                Div(Modifier.fillMaxSize().background(Colors.Transparent).toAttrs())
-                Image(
-                    modifier = HoverImageArtStyle.toModifier()
-                        .then(Modifier.fillMaxWidth().align(Alignment.TopCenter).objectFit(ObjectFit.Cover)).background(
-                            Res.Colors.PROFILE_BG
-                        ),
-                    src = Res.Drawable.IMAGE_ART, alt = "Profile image art"
-                )
             }
-            SpanText(
-                text = Res.String.REVEAL_PROFILE_IMAGE,
-                modifier = AboutSectionDesignationStyle.toModifier().margin(topBottom = 12.px)
-                    .fontFamily(Res.Font.LATO_REGULAR)
-                    .color(
-                        when (ColorMode.current) {
-                            ColorMode.LIGHT -> Res.Colors.DARK_BLUE
-                            ColorMode.DARK -> Res.Colors.WHITE
-                        }
-                    )
-            )
         }
     }
 }

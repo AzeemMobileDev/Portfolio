@@ -1,6 +1,7 @@
 package com.azeem.portfolio.utils
 
 import com.varabyte.kobweb.compose.ui.graphics.Color
+import kotlin.properties.Delegates
 
 object Res {
     object Colors {
@@ -41,7 +42,7 @@ object Res {
         const val GITHUB_URL = "https://github.com/AzeemMobileDev"
         const val LINKEDIN_URL = "https://www.linkedin.com/in/mohamed-azeem-m/"
         const val RESUME = "https://drive.google.com/file/d/1a55FTPQEH30ckbAKJNEXYWhXsvZLeL6Z/view?usp=sharing"
-        const val VERSION = "Version: 1.0.0"
+        const val VERSION = "Version: 1.0.1"
         const val MADE_WITH = "Made with"
         const val REVEAL_PROFILE_IMAGE = "Tap or hover to reveal my profile image"
     }
@@ -50,7 +51,6 @@ object Res {
         // Profile image
         const val IMAGE_1 = "/image1.png"
         const val IMAGE_2 = "/image2.png"
-        const val IMAGE_ART = "/image-art.webp"
         const val PROFILE_IMAGE_ART = "/profile-pic-art.png"
 
         // Skills and Tools

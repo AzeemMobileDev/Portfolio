@@ -10,7 +10,6 @@ import com.varabyte.kobweb.silk.components.forms.ButtonStyle
 import com.varabyte.kobweb.silk.components.forms.ButtonVars
 import com.varabyte.kobweb.silk.style.*
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
-import com.varabyte.kobweb.silk.style.selectors.autofill
 import com.varabyte.kobweb.silk.style.selectors.hover
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import com.varabyte.kobweb.silk.theme.colors.palette.color
@@ -70,7 +69,7 @@ val BackToTopButtonStyle = CssStyle {
     base {
         Modifier
             .size(30.px)
-            .borderRadius(100.percent)
+            .borderRadius(25.percent)
             .margin(
                 right = 7.5.px,
                 bottom = 30.px
@@ -79,69 +78,42 @@ val BackToTopButtonStyle = CssStyle {
             .styleModifier {
                 property("pointer-events", "auto")
             }
+            .transition(
+                Transition.of(
+                    property = "translate",
+                    duration = 200.ms, timingFunction = AnimationTimingFunction.Ease,
+                    delay = null
+                )
+            )
 
     }
 
     Breakpoint.SM {
         Modifier
             .size(30.px)
-            .borderRadius(100.percent)
+            .borderRadius(25.percent)
             .margin(
                 right = 15.px,
                 bottom = 30.px
-            )
-            .styleModifier {
-                property("pointer-events", "auto")
-            }
-            .transition(
-                Transition.of(
-                    property = "translate",
-                    duration = 200.ms, timingFunction = AnimationTimingFunction.Ease,
-                    delay = null
-                )
             )
     }
     Breakpoint.MD {
         Modifier
             .size(40.px)
-            .borderRadius(100.percent)
+            .borderRadius(25.percent)
             .margin(
                 right = 20.px,
                 bottom = 30.px
-            )
-            .styleModifier {
-                property("pointer-events", "auto")
-            }
-            .transition(
-                Transition.of(
-                    property = "translate",
-                    duration = 200.ms, timingFunction = AnimationTimingFunction.Ease,
-                    delay = null
-                )
             )
     }
     Breakpoint.LG {
         Modifier
             .size(50.px)
-            .borderRadius(100.percent)
+            .borderRadius(25.percent)
             .margin(
                 right = 40.px,
                 bottom = 40.px
             )
-            .styleModifier {
-                property("pointer-events", "auto")
-            }
-            .transition(
-                Transition.of(
-                    property = "translate",
-                    duration = 200.ms, timingFunction = AnimationTimingFunction.Ease,
-                    delay = null
-                )
-            )
-    }
-
-    hover {
-        Modifier.translateY((-10).px)
     }
 }
 
@@ -249,26 +221,26 @@ val HoverProfileImageArtStyle = CssStyle {
 val AboutProfileImageStyle = CssStyle {
     Breakpoint.ZERO {
         Modifier
-            .height(280.px)
-            .width(240.px)
+            .height(100.percent)
+            .width(85.percent)
             .objectFit(ObjectFit.Cover)
     }
     Breakpoint.SM {
         Modifier
-            .height(300.px)
-            .width(250.px)
+            .height(100.percent)
+            .width(85.percent)
             .objectFit(ObjectFit.Cover)
     }
     Breakpoint.MD {
         Modifier
-            .height(400.px)
-            .width(350.px)
+            .height(100.percent)
+            .width(85.percent)
             .objectFit(ObjectFit.Cover)
     }
     Breakpoint.LG {
         Modifier
-            .height(450.px)
-            .width(400.px)
+            .height(100.percent)
+            .width(85.percent)
             .objectFit(ObjectFit.Cover)
     }
 }

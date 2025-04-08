@@ -2,6 +2,7 @@ package com.azeem.portfolio.pages
 
 import androidx.compose.runtime.*
 import com.azeem.portfolio.components.sections.*
+import com.azeem.portfolio.components.widgets.BackToTopButton
 import com.azeem.portfolio.utils.Res
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -44,6 +45,7 @@ fun HomePage() {
             ExperienceSection(ctx = pageContext, breakpoint = breakpoint)
             CertificationsSection(ctx = pageContext, breakpoint = breakpoint)
             Surface(modifier = Modifier.height(30.px)) {}
+            BackToTopButton()
             FooterSection(ctx = pageContext)
         }
     }
