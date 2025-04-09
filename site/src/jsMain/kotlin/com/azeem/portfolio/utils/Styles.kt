@@ -334,24 +334,24 @@ val ResumeButtonStyle = CssStyle {
             .fontSize(12.px)
     }
     Breakpoint.SM {
-        Modifier.width(125.px)
+        Modifier.width(115.px)
             .height(40.px)
             .fontSize(12.px)
 
     }
     Breakpoint.MD {
-        Modifier.width(135.px)
-            .height(45.px)
+        Modifier.width(115.px)
+            .height(40.px)
             .fontSize(13.px)
     }
     Breakpoint.LG {
-        Modifier.width(145.px)
-            .height(50.px)
+        Modifier.width(135.px)
+            .height(45.px)
             .fontSize(14.px)
     }
 
     hover {
-        Modifier.scale(1.1).cursor(Cursor.Pointer)
+        Modifier.cursor(Cursor.Pointer)
     }
 }
 

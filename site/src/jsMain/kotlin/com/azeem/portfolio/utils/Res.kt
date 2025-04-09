@@ -41,7 +41,7 @@ object Res {
         const val KEY_DUTIES = "Key Duties:"
         const val GITHUB_URL = "https://github.com/AzeemMobileDev"
         const val LINKEDIN_URL = "https://www.linkedin.com/in/mohamed-azeem-m/"
-        const val RESUME = "https://drive.google.com/file/d/1a55FTPQEH30ckbAKJNEXYWhXsvZLeL6Z/view?usp=sharing"
+        const val RESUME = "https://drive.google.com/file/d/16aaCajzr60AUtzK1Hd6-bWOxrOmKNuaR/view?usp=sharing"
         const val VERSION = "Version: 1.0.1"
         const val MADE_WITH = "Made with"
         const val REVEAL_PROFILE_IMAGE = "Tap or hover to reveal my profile image"
