@@ -49,6 +49,17 @@ val HoverBgStyle = CssStyle {
     }
 }
 
+val HoverBgClickableStyle = CssStyle {
+    hover {
+        Modifier.background(
+            when (colorMode) {
+                ColorMode.LIGHT -> Res.Colors.HOME_BG
+                ColorMode.DARK -> Res.Colors.DARK
+            }
+        ).cursor(Cursor.Pointer)
+    }
+}
+
 val ShareButtonStyle = CssStyle {
     hover {
         Modifier.cursor(Cursor.Pointer).scale(1.2)

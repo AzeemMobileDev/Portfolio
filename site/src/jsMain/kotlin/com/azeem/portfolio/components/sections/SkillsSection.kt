@@ -7,6 +7,7 @@ import com.azeem.portfolio.utils.Res.String.AREA_OF_INTEREST_TITLE
 import com.azeem.portfolio.utils.Res.String.SKILLS_TITLE
 import com.azeem.portfolio.utils.Res.String.TOOLS_TITLE
 import com.azeem.portfolio.components.widgets.SectionTitle
+import com.azeem.portfolio.model.Interests
 import com.varabyte.kobweb.browser.util.kebabCaseToTitleCamelCase
 import com.varabyte.kobweb.compose.css.MixBlendMode
 import com.varabyte.kobweb.compose.css.TextAlign
@@ -17,6 +18,7 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
+import com.varabyte.kobweb.core.PageContext
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.Surface
@@ -28,7 +30,7 @@ import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.px
 
 @Composable
-fun SkillsSection() {
+fun SkillsSection(ctx: PageContext) {
 
     Column(
         modifier = HeroSectionStyle.toModifier().id(SKILLS_TITLE), horizontalAlignment = Alignment.CenterHorizontally,
@@ -76,7 +78,7 @@ fun SkillsSection() {
                 .borderRadius(r = 8.px)
         ) {
             DataRepository.getAreaOfInterests().forEach {
-                SkillItem(skillModel = it, Modifier)
+                InterestItem(interest = it, Modifier, ctx = ctx)
             }
         }
     }
@@ -100,6 +102,40 @@ fun SkillItem(skillModel: Skill, modifier: Modifier) {
 
         SpanText(
             text = skillModel.title,
+            modifier = SkillTitleStyle.toModifier()
+                .padding(top = 10.px)
+                .fillMaxWidth()
+                .fontFamily(Res.Font.LATO_BOLD)
+                .color(
+                    when (ColorMode.current) {
+                        ColorMode.LIGHT -> Res.Colors.DARK_BLUE
+                        ColorMode.DARK -> Res.Colors.WHITE
+                    }
+                ).textAlign(TextAlign.Center)
+        )
+    }
+}
+
+@Composable
+fun InterestItem(
+    interest: Interests, modifier: Modifier, ctx: PageContext
+) {
+    Column(
+        HoverBgClickableStyle.toModifier().then(
+            modifier.fillMaxWidth().padding(topBottom = 20.px)
+        ).onClick { ctx.router.navigateTo(interest.link) },
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Image(
+            src = interest.drawable,
+            modifier = SkillIconStyle.toModifier()
+                .styleModifier {
+                    mixBlendMode(MixBlendMode.Normal)
+                }
+        )
+
+        SpanText(
+            text = interest.title,
             modifier = SkillTitleStyle.toModifier()
                 .padding(top = 10.px)
                 .fillMaxWidth()

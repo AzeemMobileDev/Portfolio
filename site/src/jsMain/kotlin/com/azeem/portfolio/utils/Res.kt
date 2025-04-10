@@ -1,7 +1,6 @@
 package com.azeem.portfolio.utils
 
 import com.varabyte.kobweb.compose.ui.graphics.Color
-import kotlin.properties.Delegates
 
 object Res {
     object Colors {
@@ -12,7 +11,6 @@ object Res {
         val WHITE = Color.rgb(0xffffff)
         val BLACK = Color.rgb(0x000000)
         val GREY = Color.rgb(0x9ca7b8)
-        val GREY_DARK = Color.rgb(0x606060)
     }
 
     object String {
@@ -65,6 +63,7 @@ object Res {
         const val KOBWEB_LOGO = "/images/kobweb_logo.png"
         const val KOBWEB = "/images/kobweb.png"
         const val KTOR = "/images/ktor-logo.png"
+        const val SPRING_BOOT = "/images/spring-boot.png"
         const val COMPOSE_MULTIPLATFORM = "/images/compose-multiplatform.png"
         const val REACT_NATIVE = "/images/react-native.svg"
         const val SWIFTUI = "/images/swiftui.png"

@@ -1,9 +1,6 @@
 package com.azeem.portfolio.utils
 
-import com.azeem.portfolio.model.Certificates
-import com.azeem.portfolio.model.Experience
-import com.azeem.portfolio.model.Projects
-import com.azeem.portfolio.model.Skill
+import com.azeem.portfolio.model.*
 
 object DataRepository {
     fun getSkills() = ArrayList<Skill>().apply {
@@ -20,13 +17,14 @@ object DataRepository {
         add(Skill(drawable = Res.Drawable.VSCODE, title = "VSCode"))
     }
 
-    fun getAreaOfInterests() = ArrayList<Skill>().apply {
-        add(Skill(drawable = Res.Drawable.COMPOSE_MULTIPLATFORM, title = "Compose Multiplatform"))
-        add(Skill(drawable = Res.Drawable.FLUTTER, title = "Flutter"))
-        add(Skill(drawable = Res.Drawable.REACT_NATIVE, title = "React Native"))
-        add(Skill(drawable = Res.Drawable.KOBWEB, title = "Kobweb"))
-        add(Skill(drawable = Res.Drawable.KTOR, title = "Ktor"))
-        add(Skill(drawable = Res.Drawable.SWIFTUI, title = "SwiftUI"))
+    fun getAreaOfInterests() = ArrayList<Interests>().apply {
+        add(Interests(drawable = Res.Drawable.COMPOSE_MULTIPLATFORM, title = "Compose Multiplatform", link = "https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-create-first-app.html"))
+        add(Interests(drawable = Res.Drawable.FLUTTER, title = "Flutter", link = "https://docs.flutter.dev/get-started/codelab"))
+        add(Interests(drawable = Res.Drawable.REACT_NATIVE, title = "React Native", link = "https://reactnative.dev/docs/getting-started"))
+        add(Interests(drawable = Res.Drawable.KOBWEB, title = "Kobweb", link = "https://kobweb.varabyte.com/docs/getting-started/what-is-kobweb"))
+        add(Interests(drawable = Res.Drawable.KTOR, title = "Ktor", link = "https://ktor.io/docs/server-create-a-new-project.html"))
+        add(Interests(drawable = Res.Drawable.SWIFTUI, title = "SwiftUI", link = "https://www.swift.org/getting-started/swiftui/"))
+        add(Interests(drawable = Res.Drawable.SPRING_BOOT, title = "Spring Boot using Kotlin", link = "https://spring.io/guides/tutorials/spring-boot-kotlin"))
     }
 
     fun getExperiences() = ArrayList<Experience>().apply {
