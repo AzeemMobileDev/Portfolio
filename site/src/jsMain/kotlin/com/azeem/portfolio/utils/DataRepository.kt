@@ -12,7 +12,7 @@ object DataRepository {
         add(Skill(drawable = Res.Drawable.FIREBASE, title = "Firebase"))
         add(Skill(drawable = Res.Drawable.GIT, title = "Git"))
         add(Skill(drawable = Res.Drawable.ANDROID_STUDIO, title = "Android Studio"))
-        add(Skill(drawable = Res.Drawable.INTELLIJ, title = "IntelliJ"))
+        add(Skill(drawable = Res.Drawable.INTELLIJ, title = "IntelliJ IDEA"))
         add(Skill(drawable = Res.Drawable.POSTMAN, title = "Postman"))
         add(Skill(drawable = Res.Drawable.VSCODE, title = "VSCode"))
     }
