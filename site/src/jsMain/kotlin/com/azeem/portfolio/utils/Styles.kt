@@ -41,12 +41,10 @@ val UncoloredButtonVariant = ButtonStyle.addVariantBase {
 
 val HoverBgStyle = CssStyle {
     hover {
-        Modifier.border(
-            1.25.px, LineStyle.Solid,
-            when (colorMode.toPalette().colorMode) {
-                ColorMode.LIGHT -> Res.Colors.DARK
-                ColorMode.DARK -> Res.Colors.WHITE
-            }
+        Modifier.background(
+            if (colorMode.isLight)
+                Res.Colors.HOME_BG
+            else Res.Colors.DARK
         ).borderRadius(r = 6.px)
     }
 }
@@ -55,7 +53,7 @@ val HoverBgClickableStyle = CssStyle {
     hover {
         Modifier.background(
             if (colorMode.isLight)
-                Res.Colors.PROFILE_BG
+                Res.Colors.HOME_BG
             else Res.Colors.DARK
         ).borderRadius(r = 6.px).cursor(Cursor.Pointer)
     }

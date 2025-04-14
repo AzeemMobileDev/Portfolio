@@ -141,7 +141,7 @@ fun RightSide(breakpoint: Breakpoint) {
         ) {
             Box(
                 modifier = AboutProfileImageStyle.toModifier().borderRadius(10.px).clip(shape = Rect(0, 10.px))
-                    .align(Alignment.CenterHorizontally)
+                    .align(if (breakpoint > Breakpoint.MD) Alignment.End else Alignment.CenterHorizontally)
             ) {
                 Image(
                     modifier = Modifier.fillMaxWidth().align(Alignment.Center),
