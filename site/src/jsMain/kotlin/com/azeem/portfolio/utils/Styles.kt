@@ -11,7 +11,9 @@ import com.varabyte.kobweb.silk.components.forms.ButtonVars
 import com.varabyte.kobweb.silk.style.*
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.selectors.hover
+import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import com.varabyte.kobweb.silk.theme.colors.palette.color
+import com.varabyte.kobweb.silk.theme.colors.palette.colorMode
 import com.varabyte.kobweb.silk.theme.colors.palette.toPalette
 import org.jetbrains.compose.web.css.*
 
@@ -39,21 +41,25 @@ val UncoloredButtonVariant = ButtonStyle.addVariantBase {
 
 val HoverBgStyle = CssStyle {
     hover {
-        Modifier.background(
-            if (colorMode.isLight)
-                Res.Colors.PROFILE_BG
-            else Res.Colors.DARK
-        ).borderRadius(r = 8.px)
+        Modifier.border(
+            1.25.px, LineStyle.Solid,
+            when (colorMode.toPalette().colorMode) {
+                ColorMode.LIGHT -> Res.Colors.DARK
+                ColorMode.DARK -> Res.Colors.WHITE
+            }
+        ).borderRadius(r = 6.px)
     }
 }
 
 val HoverBgClickableStyle = CssStyle {
     hover {
-        Modifier.background(
-            if (colorMode.isLight)
-                Res.Colors.PROFILE_BG
-            else Res.Colors.DARK
-        ).borderRadius(r = 8.px).cursor(Cursor.Pointer)
+        Modifier.border(
+            1.25.px, LineStyle.Solid,
+            when (colorMode.toPalette().colorMode) {
+                ColorMode.LIGHT -> Res.Colors.DARK
+                ColorMode.DARK -> Res.Colors.WHITE
+            }
+        ).borderRadius(r = 6.px).cursor(Cursor.Pointer)
     }
 }
 
