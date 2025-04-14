@@ -41,10 +41,9 @@ val UncoloredButtonVariant = ButtonStyle.addVariantBase {
 val HoverBgStyle = CssStyle {
     hover {
         Modifier.background(
-            when (colorMode) {
-                ColorMode.LIGHT -> Res.Colors.HOME_BG
-                ColorMode.DARK -> Res.Colors.DARK
-            }
+            if (colorMode.isLight)
+                Res.Colors.HOME_BG
+            else Res.Colors.DARK
         )
     }
 }
@@ -52,10 +51,9 @@ val HoverBgStyle = CssStyle {
 val HoverBgClickableStyle = CssStyle {
     hover {
         Modifier.background(
-            when (colorMode) {
-                ColorMode.LIGHT -> Res.Colors.HOME_BG
-                ColorMode.DARK -> Res.Colors.DARK
-            }
+            if (colorMode.isLight)
+                Res.Colors.HOME_BG
+            else Res.Colors.DARK
         ).cursor(Cursor.Pointer)
     }
 }
