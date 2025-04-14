@@ -9,10 +9,10 @@ data class Experience(
     val companyLogo: String,
     val keyDuties: List<String>,
     val projects: List<Projects>
-)
-
-data class Projects(
-    val name: String,
-    val description: List<String>,
-    val link: String? = null
-)
+) {
+    data class Projects(
+        val name: String,
+        val description: List<String>,
+        val link: String? = null
+    )
+}

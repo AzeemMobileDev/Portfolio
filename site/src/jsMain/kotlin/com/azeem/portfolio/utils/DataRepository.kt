@@ -42,7 +42,7 @@ object DataRepository {
                     "  Had worked in multiple cinema ticketing applications based on various countries."
                 ),
                 projects = listOf(
-                    Projects(
+                    Experience.Projects(
                         name = "AMC Cinemas KSA",
                         description = listOf(
                             "  AMC Cinemas is a mobile application used to book movie tickets for enjoying movies in their cinemas sites across various locations in Saudi Arabia.",
@@ -51,7 +51,7 @@ object DataRepository {
                         ),
                         link = "https://play.google.com/store/apps/details?id=com.amc.cinemas.ksa&hl=en_IN"
                     ),
-                    Projects(
+                    Experience.Projects(
                         name = "CMX Cinemas",
                         description = listOf(
                             "  CMX Cinemas is a mobile application used to book movie tickets for enjoying movies in their cinemas sites across various locations in USA.",
@@ -59,7 +59,7 @@ object DataRepository {
                         ),
                         link = "https://play.google.com/store/apps/details?id=com.influx.cinema.cmx&hl=en_IN"
                     ),
-                    Projects(
+                    Experience.Projects(
                         name = "Elevate Entertainment",
                         description = listOf(
                             "  Elevate Entertainment is a mobile application used to book movie tickets for enjoying movies in EVO cinemas' sites across various locations in USA.",
@@ -84,7 +84,7 @@ object DataRepository {
                     "  Had worked on more than 20 Android projects for this company."
                 ),
                 projects = listOf(
-                    Projects(
+                    Experience.Projects(
                         name = "Star ATOM",
                         description = listOf(
                             "  Star ATOM is a mobile application for the agents of the Star Health Insurance Private Limited across India.",
@@ -92,7 +92,7 @@ object DataRepository {
                         ),
                         link = null
                     ),
-                    Projects(
+                    Experience.Projects(
                         name = "QuikWORK",
                         description = listOf(
                             "  QuikWORK is a mobile application used by candidates for seeking job roles based in different sectors predominantly in UAE",
@@ -117,7 +117,7 @@ object DataRepository {
                     "  Developed and maintained mobile application for US based client using then latest technologies of Android development and coding done using Java, inspired from Instagram and Twitter."
                 ),
                 projects = listOf(
-                    Projects(
+                    Experience.Projects(
                         name = "Hotfuse",
                         description = listOf(
                             "  Hotfuse is a social application which allows the user to connect with the people in the outer world by sharing the " +

@@ -6,7 +6,6 @@ import com.azeem.portfolio.model.Experience
 import com.azeem.portfolio.utils.*
 import com.azeem.portfolio.utils.Res.String.EXPERIENCE_TITLE
 import com.azeem.portfolio.components.widgets.SectionTitle
-import com.azeem.portfolio.model.Projects
 import com.varabyte.kobweb.browser.util.kebabCaseToTitleCamelCase
 import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -53,13 +52,14 @@ fun ExperienceSection(ctx: PageContext, breakpoint: Breakpoint) {
 @Composable
 fun ExperienceItem(experience: Experience, ctx: PageContext, breakpoint: Breakpoint, modifier: Modifier = Modifier) {
     Column(
-        modifier =
+        modifier = HoverBgStyle.toModifier().then(
             modifier.border(
                 0.1.px, LineStyle.Solid, when (ColorMode.current) {
                     ColorMode.LIGHT -> Res.Colors.DARK
                     ColorMode.DARK -> Res.Colors.WHITE
                 }
             ).borderRadius(r = 8.px).padding(10.px).margin(bottom = if (experience.id < 3) 20.px else 0.px)
+        )
     ) {
         Column(modifier = Modifier.padding(10.px)) {
 
@@ -152,7 +152,7 @@ fun ExperienceItem(experience: Experience, ctx: PageContext, breakpoint: Breakpo
 }
 
 @Composable
-fun ProjectItem(project: Projects, ctx: PageContext, breakpoint: Breakpoint) {
+fun ProjectItem(project: Experience.Projects, ctx: PageContext, breakpoint: Breakpoint) {
 
     Column(modifier = Modifier.padding(topBottom = 10.px)) {
 
