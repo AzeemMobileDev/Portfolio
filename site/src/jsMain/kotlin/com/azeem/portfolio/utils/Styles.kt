@@ -42,9 +42,9 @@ val HoverBgStyle = CssStyle {
     hover {
         Modifier.background(
             if (colorMode.isLight)
-                Res.Colors.HOME_BG
+                Res.Colors.PROFILE_BG
             else Res.Colors.DARK
-        )
+        ).borderRadius(r = 8.px)
     }
 }
 
@@ -52,9 +52,9 @@ val HoverBgClickableStyle = CssStyle {
     hover {
         Modifier.background(
             if (colorMode.isLight)
-                Res.Colors.HOME_BG
+                Res.Colors.PROFILE_BG
             else Res.Colors.DARK
-        ).cursor(Cursor.Pointer)
+        ).borderRadius(r = 8.px).cursor(Cursor.Pointer)
     }
 }
 

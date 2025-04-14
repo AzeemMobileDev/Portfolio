@@ -42,7 +42,7 @@ object Res {
         const val RESUME = "https://drive.google.com/file/d/16aaCajzr60AUtzK1Hd6-bWOxrOmKNuaR/view?usp=sharing"
         const val VERSION = "Version: 1.0.1"
         const val MADE_WITH = "Made with"
-        const val REVEAL_PROFILE_IMAGE = "Tap or hover to reveal my profile image"
+        const val REVEAL_PROFILE_IMAGE = "Tap or hover to view my profile picture"
     }
 
     object Drawable {
