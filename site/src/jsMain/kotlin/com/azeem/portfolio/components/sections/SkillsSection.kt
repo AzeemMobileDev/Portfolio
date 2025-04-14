@@ -54,7 +54,7 @@ fun SkillsSection(ctx: PageContext) {
                 .borderRadius(r = 8.px)
         ) {
             DataRepository.getSkills().forEach {
-                SkillItem(skillModel = it, Modifier)
+                SkillItem(skillModel = it)
             }
         }
 
@@ -85,11 +85,9 @@ fun SkillsSection(ctx: PageContext) {
 }
 
 @Composable
-fun SkillItem(skillModel: Skill, modifier: Modifier) {
+fun SkillItem(skillModel: Skill) {
     Column(
-        HoverBgStyle.toModifier().then(
-            modifier.fillMaxWidth().padding(topBottom = 20.px)
-        ),
+        Modifier.fillMaxWidth().padding(topBottom = 20.px),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
@@ -121,7 +119,7 @@ fun InterestItem(
     interest: Interests, modifier: Modifier, ctx: PageContext
 ) {
     Column(
-        HoverBgClickableStyle.toModifier().then(
+        HoverCursorStyle.toModifier().then(
             modifier.fillMaxWidth().padding(topBottom = 20.px)
         ).onClick { ctx.router.navigateTo(interest.link) },
         horizontalAlignment = Alignment.CenterHorizontally,
