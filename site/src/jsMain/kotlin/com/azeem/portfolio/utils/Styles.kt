@@ -11,24 +11,13 @@ import com.varabyte.kobweb.silk.components.forms.ButtonVars
 import com.varabyte.kobweb.silk.style.*
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.selectors.hover
-import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import com.varabyte.kobweb.silk.theme.colors.palette.color
-import com.varabyte.kobweb.silk.theme.colors.palette.colorMode
 import com.varabyte.kobweb.silk.theme.colors.palette.toPalette
 import org.jetbrains.compose.web.css.*
 
 val PageContentStyle = CssStyle {
     base { Modifier.fillMaxSize().padding(leftRight = 2.cssRem, top = 2.cssRem) }
     Breakpoint.MD { Modifier.maxWidth(60.cssRem) }
-}
-
-val NavHeaderStyle = CssStyle {
-    base {
-        Modifier
-            .background(rgba(255, 255, 255, 0f))
-            .gap(1.5.cssRem)
-            .fillMaxWidth().padding(1.cssRem)
-    }
 }
 
 val CircleButtonVariant = ButtonStyle.addVariantBase {
@@ -62,12 +51,6 @@ val HoverBgClickableStyle = CssStyle {
 val ShareButtonStyle = CssStyle {
     hover {
         Modifier.cursor(Cursor.Pointer).scale(1.2)
-    }
-}
-
-val HoverCursorStyle = CssStyle {
-    hover {
-        Modifier.cursor(Cursor.Pointer)
     }
 }
 
@@ -146,25 +129,6 @@ val SectionTitleStyle = CssStyle {
     }
     Breakpoint.LG {
         Modifier.fontSize(FontSize.XLarge)
-    }
-}
-
-val SectionDescriptionStyle = CssStyle {
-    base {
-        Modifier.fontSize(FontSize.XSmall)
-            .margin(topBottom = 0.75.cssRem)
-    }
-    Breakpoint.SM {
-        Modifier.fontSize(FontSize.Small)
-            .margin(topBottom = 0.75.cssRem)
-    }
-    Breakpoint.MD {
-        Modifier.fontSize(FontSize.Medium)
-            .margin(topBottom = 1.cssRem)
-    }
-    Breakpoint.LG {
-        Modifier.fontSize(FontSize.Large)
-            .margin(topBottom = 2.cssRem)
     }
 }
 
@@ -474,25 +438,6 @@ val SkillTitleStyle = CssStyle {
     }
 }
 
-val NavigationMenuStyle = CssStyle {
-    base {
-        Modifier.fontSize(12.px)
-    }
-    Breakpoint.SM {
-        Modifier.fontSize(12.px)
-
-    }
-    Breakpoint.MD {
-        Modifier.fontSize(14.px)
-    }
-    Breakpoint.LG {
-        Modifier.fontSize(16.px)
-    }
-    Breakpoint.XL {
-        Modifier.fontSize(18.px)
-    }
-}
-
 val SurfaceStyle = CssStyle {
     base {
         Modifier.height(25.px)
@@ -508,34 +453,6 @@ val SurfaceStyle = CssStyle {
     }
     Breakpoint.LG {
         Modifier.height(45.px)
-    }
-}
-
-val HoverImageStyle = CssStyle {
-    base {
-        Modifier
-            .opacity(100.percent)
-    }
-}
-
-val HoverImageArtStyle = CssStyle {
-    base {
-        Modifier.opacity(100.percent)
-            .transition(
-                Transition.of(
-                    property = "opacity",
-                    duration = 200.ms,
-                    delay = null
-                )
-            )
-    }
-    hover {
-        Modifier
-            .opacity(0.percent)
-    }
-    cssRule("onClick") {
-        Modifier
-            .opacity(0.percent)
     }
 }
 
@@ -597,39 +514,6 @@ val HomeSectionStyle = CssStyle {
         Modifier
             .width(100.percent)
             .height(725.px)
-    }
-}
-
-val AboutStyle = CssStyle {
-    base {
-        Modifier
-            .width(100.percent)
-            .fontSize(3.cssRem)
-            .height(100.vh)
-    }
-    Breakpoint.ZERO {
-        Modifier
-            .width(100.percent)
-            .fontSize(2.5.cssRem)
-            .height(50.vh)
-    }
-    Breakpoint.SM {
-        Modifier
-            .width(100.percent)
-            .fontSize(2.5.cssRem)
-            .height(50.vh)
-    }
-    Breakpoint.MD {
-        Modifier
-            .width(100.percent)
-            .fontSize(2.75.cssRem)
-            .height(85.vh)
-    }
-    Breakpoint.LG {
-        Modifier
-            .width(100.percent)
-            .fontSize(3.cssRem)
-            .height(100.vh)
     }
 }
 

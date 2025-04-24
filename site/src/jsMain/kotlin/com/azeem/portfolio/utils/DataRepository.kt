@@ -134,6 +134,14 @@ object DataRepository {
     fun getCertificates() = ArrayList<Certificates>().apply {
         add(
             Certificates(
+                name = "Build Modern Android App with REST API and Ktor Server",
+                issueDate = "Issued Apr 2025",
+                certificateLogo = Res.Drawable.UDEMY,
+                link = "https://www.udemy.com/certificate/UC-836ffd7a-38eb-42bd-8da2-7d34233aec48/"
+            )
+        )
+        add(
+            Certificates(
                 name = "Build a Website from Scratch with Kotlin and Jetpack Compose",
                 issueDate = "Issued Mar 2025",
                 certificateLogo = Res.Drawable.UDEMY,
