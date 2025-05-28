@@ -18,6 +18,7 @@ object DataRepository {
     }
 
     fun getAreaOfInterests() = ArrayList<Interests>().apply {
+        add(Interests(drawable = Res.Drawable.KOTLIN_MULTIPLATFORM, title = "Kotlin Multiplatform", link = "https://www.jetbrains.com/help/kotlin-multiplatform-dev/quickstart.html"))
         add(Interests(drawable = Res.Drawable.COMPOSE_MULTIPLATFORM, title = "Compose Multiplatform", link = "https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-multiplatform-create-first-app.html"))
         add(Interests(drawable = Res.Drawable.FLUTTER, title = "Flutter", link = "https://docs.flutter.dev/get-started/codelab"))
         add(Interests(drawable = Res.Drawable.REACT_NATIVE, title = "React Native", link = "https://reactnative.dev/docs/getting-started"))

@@ -130,9 +130,8 @@ fun LeftSide(
 @Composable
 fun RightSide(breakpoint: Breakpoint) {
     Box(
-        modifier = Modifier.thenIf(
-            condition = breakpoint > Breakpoint.MD, other = Modifier.height(756.px)
-        )
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -140,11 +139,11 @@ fun RightSide(breakpoint: Breakpoint) {
             verticalArrangement = Arrangement.Center
         ) {
             Box(
-                modifier = AboutProfileImageStyle.toModifier().borderRadius(10.px).clip(shape = Rect(0, 10.px))
-                    .align(if (breakpoint > Breakpoint.MD) Alignment.End else Alignment.CenterHorizontally)
+                modifier = AboutProfileImageStyle.toModifier()
+                    .align(Alignment.CenterHorizontally)
             ) {
                 Image(
-                    modifier = Modifier.fillMaxWidth().align(Alignment.Center),
+                    modifier = Modifier.fillMaxWidth().align(Alignment.Center).borderRadius(10.px).clip(shape = Rect(0, 10.px)),
                     src = Res.Drawable.IMAGE_2, alt = "Profile image"
                 )
             }

@@ -29,7 +29,7 @@ object Res {
         val ABOUT_ME = listOf(
             "  Sr. Application Developer specialized in writing code with Java and Kotlin for creating Android applications with total experience of 8+ years.",
             "  Developed applications with Kotlin, Core Java, Android and Jetpack components.",
-            "  5 months of experience in Designing UI using Jetpack Compose.",
+            "  7 months of experience in Designing UI using Jetpack Compose.",
             "  Basic Cross Platform application development by using Flutter and React Native.",
             "  Experience of developing applications with MVP, MVVM and Clean architecture.",
             "  Knowledge of Offline Storage (Room), Threading and Networking.",
@@ -64,6 +64,7 @@ object Res {
         const val KOBWEB = "/images/kobweb.png"
         const val KTOR = "/images/ktor-logo.png"
         const val SPRING_BOOT = "/images/spring-boot.svg"
+        const val KOTLIN_MULTIPLATFORM = "/images/kotlin-multiplatform.svg"
         const val COMPOSE_MULTIPLATFORM = "/images/compose-multiplatform.svg"
         const val REACT_NATIVE = "/images/react-native.svg"
         const val SWIFTUI = "/images/swiftui.png"
